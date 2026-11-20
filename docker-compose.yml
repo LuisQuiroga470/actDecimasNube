@@ -32,8 +32,8 @@ services:
      test: ["CMD","healthcheck.sh","--connect","--innodb_initialized"]
      interval: 5s
      timeout: 3s
-     retries: 10
-     start_period: 20s
+     retries: 2
+     start_period: 19s
 
 volumes:
   datos-db:
