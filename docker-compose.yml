@@ -8,7 +8,7 @@ services:
       DB_HOST: db
       DB_USER: app
       DB_PASSWORD: app123
-      DB_NAME: ayudantias2
+      DB_NAME: empresa_cloud
     depends_on:
       db:
         condition: service_healthy
@@ -22,7 +22,7 @@ services:
     image: mariadb:11.4
     environment:
       MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: ayudantias2
+      MARIADB_DATABASE: empresa_cloud
       MARIADB_USER: app
       MARIADB_PASSWORD: app123
     volumes:
@@ -32,8 +32,8 @@ services:
      test: ["CMD","healthcheck.sh","--connect","--innodb_initialized"]
      interval: 5s
      timeout: 3s
-     retries: 2
-     start_period: 19s
+     retries: 10
+     start_period: 20s
 
 volumes:
   datos-db:
